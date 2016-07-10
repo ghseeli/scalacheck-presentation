@@ -7,11 +7,11 @@ import org.scalacheck.Prop.forAll
 object AdditionProps extends Properties("Addition"){
   property("Positive Ints add to a positive Int (test 1)") =
     forAll(Gen.posNum[Int], Gen.posNum[Int]) { (x, y) =>
-    x + y >= 0
+      x + y >= 0
   }
 
-//  property("Positive Ints add to a positive Int (test 2)") =
-//    forAll(Arbitrary.arbitrary[Int].filter(_ >= 0), Arbitrary.arbitrary[Int].filter(_ >= 0)) { (x, y) =>
-//      x + y >= 0
-//    }
+  property("Positive Ints add to a positive Int (test 2)") =
+    forAll(Arbitrary.arbitrary[Int].filter(_ >= 0), Arbitrary.arbitrary[Int].filter(_ >= 0)) { (x, y) =>
+      x + y >= 0
+    }
 }
